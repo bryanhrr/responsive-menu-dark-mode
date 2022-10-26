@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+  --primary-clr: #ff9100;
+  --bg-clr: #bebbb6;
+  --white-bg: rgba(226, 215, 215, 0.9);
+  --dark-text-clr: #363b46;
+  --light-text-clr: #fff;
+  --hover-clr: #f1e8fd;
+}
+body.dark-mode {
+  --primary-clr: #ff9100;
+  --bg-clr: #1e1e1e;
+  --white-bg: #23262b;
+  --dark-text-clr: #fff;
+  --light-text-clr: #fff;
+  --hover-clr: #31313f;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  background: var(--bg-clr);
+}
+.container {
+  height: 100vh;
+  width: 85px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--white-bg);
+  transition: all 0.3s ease;
+}
+.container.active {
+  width: 250px;
+}
+.container .logo {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.link-item:last-child {
+  margin-top: 50px;
+}
+.link-item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  white-space: nowrap;
+  text-transform: capitalize;
+  color: var(--dark-text-clr);
+}
+.link-item a span {
+  transition: transform 0.5s;
+  transform: translateX(100px);
+}
+.link-item:last-child span h4 {
+  line-height: 1;
+}
+.link-item:last-child span p {
+  font-size: 12px;
+}
+.container.active .link-item a span {
+  transition-delay: calc(0.02s * var(--i));
+  transform: translateX(0px);
+}
+.link-item a:hover {
+  background-color: var(--hover-clr);
+}
+.link-item.active a {
+  color: var(--light-text-clr);
+  background-color: var(--primary-clr);
+}
+.link-item ion-icon {
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+.link-item img {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.link-item ion-icon.noti-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-clr);
+  border: 1px solid var(--white-bg);
+}
+.link-item a .num-noti {
+  margin-left: 40px;
+  font-size: 12px;
+  color: var(--light-text-clr);
+  background-color: var(--primary-clr);
+  min-width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.link-item.active a .num-noti {
+  color: var(--primary-clr);
+  background-color: var(--white-bg);
+}
